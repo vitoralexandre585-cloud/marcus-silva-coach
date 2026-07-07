@@ -146,8 +146,8 @@
 
   /* ABOUT */
   .about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:center}
-  /* Photo slot: drop a real headshot here by replacing the <div class="photo-frame"> inner content
-     with <img src="marcus.jpg" alt="Marcus Silva" style="width:100%;height:100%;object-fit:cover"> */
+  /* Photo slot: this uses a stock portrait. To use Marcus's real headshot, just change the
+     src on <img class="portrait"> below (keep the same class so styling/overlays stay intact). */
   .photo-frame{
     position:relative;aspect-ratio:4/5;border:1px solid var(--line);
     background:
@@ -155,10 +155,13 @@
       var(--surface);
     overflow:hidden;display:flex;align-items:flex-end;
   }
-  .photo-frame .ph{
-    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    font-family:var(--head);font-weight:900;font-size:clamp(90px,14vw,200px);
-    color:rgba(255,255,255,.05);letter-spacing:.02em;user-select:none;
+  .photo-frame .portrait{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%;
+    filter:grayscale(.18) contrast(1.03) brightness(.96);
+  }
+  .photo-frame .scrim{
+    position:absolute;inset:0;z-index:1;
+    background:linear-gradient(180deg, rgba(13,15,18,.10) 0%, rgba(13,15,18,0) 38%, rgba(13,15,18,.72) 100%);
   }
   .photo-frame .cap{
     position:relative;z-index:2;padding:22px 24px;font-family:var(--body);
@@ -353,7 +356,8 @@
 <section class="pad" id="about">
   <div class="wrap about-grid">
     <div class="photo-frame" data-aos="fade-right">
-      <div class="ph" aria-hidden="true">MS</div>
+      <img class="portrait" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&amp;w=1000&amp;auto=format&amp;fit=crop" alt="Marcus Silva, business and career coach" loading="lazy">
+      <div class="scrim" aria-hidden="true"></div>
       <div class="badge">15 yrs in the trenches</div>
       <div class="cap">Marcus Silva · São Paulo, Brazil</div>
     </div>
