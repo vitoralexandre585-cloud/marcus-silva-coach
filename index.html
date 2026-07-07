@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marcus Silva — Business &amp; Career Coach | Bold moves, real results</title>
+<meta name="description" content="No fluff, no recycled frameworks. Marcus Silva coaches ambitious professionals and founders to make the bold moves that grow their career, business and income. 340+ clients, $12M+ unlocked. Book a strategy call.">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Marcus Silva — Business &amp; Career Coach">
+<meta property="og:description" content="I help ambitious people make the bold moves most talk themselves out of, and get paid for it. 340+ clients coached. Book a strategy call.">
+<meta property="og:image" content="https://og.placeholder/marcus-silva.png">
+<meta name="theme-color" content="#0D0F12">
+
+<!-- Fonts: Barlow Condensed (headlines) + Inter (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- AOS scroll-reveal -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#0D0F12;
+    --bg-2:#0A0C0F;
+    --surface:#15181d;
+    --acc:#F5A623;
+    --acc-ink:#0D0F12;
+    --text:#ffffff;
+    --muted:rgba(255,255,255,.62);
+    --muted-2:rgba(255,255,255,.45);
+    --line:rgba(255,255,255,.10);
+    --line-2:rgba(255,255,255,.06);
+    --head:'Barlow Condensed', 'Arial Narrow', sans-serif;
+    --body:'Inter', system-ui, -apple-system, sans-serif;
+    --wrap:1320px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--text);
+    font-family:var(--body);font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--acc);color:var(--acc-ink)}
+  img{max-width:100%;display:block}
+
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 6vw}
+  .head{font-family:var(--head);text-transform:uppercase}
+  .eyebrow{
+    font-family:var(--head);font-weight:700;font-size:15px;
+    letter-spacing:.26em;text-transform:uppercase;color:var(--muted-2);
+    display:inline-flex;align-items:center;gap:14px;
+  }
+  .eyebrow::before{content:"";width:34px;height:2px;background:var(--acc);flex:none}
+  .eyebrow.acc{color:var(--acc)}
+  .eyebrow.center{justify-content:center}
+  .eyebrow.center::before{display:none}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--head);font-weight:800;font-size:18px;
+    letter-spacing:.06em;text-transform:uppercase;
+    padding:15px 30px;border-radius:2px;
+    transition:transform .18s ease, background .2s ease, color .2s ease, border-color .2s ease;
+    will-change:transform;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--acc);color:var(--acc-ink)}
+  .btn-primary:hover{background:#ffb733}
+  .btn-ghost{border:1.5px solid rgba(255,255,255,.24);color:#fff}
+  .btn-ghost:hover{border-color:#fff}
+  .btn-dark{background:var(--acc-ink);color:#fff}
+  .btn .arw{transition:transform .18s ease}
+  .btn:hover .arw{transform:translateX(4px)}
+
+  /* ============ NAV ============ */
+  header.nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px 6vw;transition:background .3s ease, padding .3s ease, border-color .3s ease;
+    border-bottom:1px solid transparent;
+  }
+  header.nav.scrolled{
+    background:rgba(10,12,15,.82);backdrop-filter:blur(12px);
+    padding:14px 6vw;border-bottom-color:var(--line);
+  }
+  .logo{font-family:var(--head);font-weight:900;font-size:22px;letter-spacing:.04em;text-transform:uppercase}
+  .logo .dot{color:var(--acc)}
+  nav.links{display:flex;gap:34px;align-items:center;
+    font-family:var(--head);font-weight:700;font-size:15px;letter-spacing:.12em;text-transform:uppercase}
+  nav.links a.txt{color:var(--muted)}
+  nav.links a.txt:hover{color:#fff}
+  nav.links a.cta{background:var(--acc);color:var(--acc-ink);padding:10px 20px;border-radius:2px;transition:background .2s}
+  nav.links a.cta:hover{background:#ffb733}
+  .burger{display:none;background:none;border:0;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
+  .burger span{width:26px;height:2px;background:#fff;display:block;transition:.25s}
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+    padding:140px 6vw 90px;
+    background:radial-gradient(120% 90% at 85% 8%, rgba(245,166,35,.16) 0%, rgba(245,166,35,0) 55%), var(--bg);
+  }
+  .hero-inner{max-width:1180px;width:100%;margin:0 auto}
+  .hero h1{
+    font-family:var(--head);font-weight:900;text-transform:uppercase;
+    font-size:clamp(52px,9vw,150px);line-height:.88;letter-spacing:-.01em;
+    margin:26px 0 0;text-wrap:balance;
+  }
+  .hero h1 .tw{color:var(--acc);white-space:nowrap}
+  .caret{
+    display:inline-block;width:.055em;height:.78em;background:var(--acc);
+    margin-left:.04em;vertical-align:-.04em;animation:blink 1s step-end infinite;
+  }
+  @keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+  .hero p.lede{
+    max-width:590px;font-size:20px;line-height:1.55;color:var(--muted);
+    margin:32px 0 0;font-weight:400;
+  }
+  .hero .actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:42px}
+  .hero .trust{
+    display:flex;gap:26px;flex-wrap:wrap;margin-top:40px;
+    font-size:13.5px;letter-spacing:.04em;color:var(--muted-2);
+  }
+  .hero .trust b{color:#fff;font-weight:600}
+  .hero .trust span{display:inline-flex;align-items:center;gap:9px}
+  .hero .trust span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--acc);flex:none}
+
+  /* ============ STATS ============ */
+  .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
+  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);max-width:var(--wrap);margin:0 auto}
+  .stat{padding:52px 6vw;border-right:1px solid var(--line-2)}
+  .stat:last-child{border-right:0}
+  .stat .num{font-family:var(--head);font-weight:900;font-size:clamp(48px,6vw,84px);line-height:1;color:var(--acc);font-variant-numeric:tabular-nums}
+  .stat .lbl{font-family:var(--head);font-weight:700;font-size:15px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+
+  /* ============ SECTION ============ */
+  section.pad{padding:min(12vw,140px) 0}
+  h2.title{font-family:var(--head);font-weight:900;text-transform:uppercase;line-height:.92;font-size:clamp(38px,5vw,72px);margin:0}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:center}
+  /* Photo slot — drop a real headshot here: replace the <div class="photo-frame"> inner content
+     with <img src="marcus.jpg" alt="Marcus Silva" style="width:100%;height:100%;object-fit:cover"> */
+  .photo-frame{
+    position:relative;aspect-ratio:4/5;border:1px solid var(--line);
+    background:
+      linear-gradient(160deg, rgba(245,166,35,.08), rgba(245,166,35,0) 60%),
+      var(--surface);
+    overflow:hidden;display:flex;align-items:flex-end;
+  }
+  .photo-frame .ph{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:var(--head);font-weight:900;font-size:clamp(90px,14vw,200px);
+    color:rgba(255,255,255,.05);letter-spacing:.02em;user-select:none;
+  }
+  .photo-frame .cap{
+    position:relative;z-index:2;padding:22px 24px;font-family:var(--body);
+    font-size:12px;letter-spacing:.06em;color:var(--muted-2);
+  }
+  .photo-frame .badge{
+    position:absolute;top:0;right:0;z-index:2;background:var(--acc);color:var(--acc-ink);
+    font-family:var(--head);font-weight:900;font-size:13px;letter-spacing:.1em;
+    text-transform:uppercase;padding:9px 15px;
+  }
+  .photo-frame::after{
+    content:"";position:absolute;left:0;bottom:0;width:64px;height:64px;
+    border-left:2px solid var(--acc);border-bottom:2px solid var(--acc);
+  }
+  .about-copy h2{margin:16px 0 24px}
+  .about-copy p{font-size:18px;line-height:1.65;color:var(--muted);margin:0 0 18px;max-width:56ch}
+  .about-stats{display:flex;gap:40px;flex-wrap:wrap;margin-top:34px}
+  .about-stats .v{font-family:var(--head);font-weight:900;font-size:34px;color:#fff;line-height:1}
+  .about-stats .k{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);margin-top:6px}
+
+  /* SERVICES */
+  .services{background:var(--bg-2);border-top:1px solid var(--line-2)}
+  .svc-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:56px}
+  .svc-head p{max-width:400px;font-size:17px;line-height:1.6;color:var(--muted)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{
+    border:1px solid var(--line);padding:40px 34px;background:var(--bg);
+    transition:border-color .3s ease, transform .3s ease, background .3s ease;
+  }
+  .card:hover{border-color:var(--acc);transform:translateY(-6px)}
+  .card.flag{
+    border-color:var(--acc);
+    background:linear-gradient(160deg, rgba(245,166,35,.10), rgba(245,166,35,0));
+  }
+  .card .no{font-family:var(--head);font-weight:900;font-size:15px;color:var(--acc);letter-spacing:.2em}
+  .card h3{font-family:var(--head);font-weight:800;text-transform:uppercase;font-size:30px;line-height:1;margin:16px 0 14px}
+  .card p{font-size:16px;line-height:1.6;color:var(--muted);margin:0 0 22px}
+  .card .tags{font-size:13.5px;color:var(--muted-2);letter-spacing:.05em}
+  .card.flag .tags{color:var(--acc)}
+
+  /* RESULTS */
+  .results-head{text-align:center;margin-bottom:60px}
+  .results-head h2{margin-top:12px}
+  .res-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);
+  }
+  .res{background:var(--bg);padding:52px 46px;transition:background .3s ease}
+  .res:hover{background:#111419}
+  .res .big{font-family:var(--head);font-weight:900;font-size:clamp(56px,7vw,104px);line-height:.9;color:var(--acc)}
+  .res .h{font-family:var(--head);font-weight:800;text-transform:uppercase;font-size:22px;margin:14px 0 8px}
+  .res p{font-size:16px;line-height:1.55;color:var(--muted);margin:0;max-width:52ch}
+
+  /* TESTIMONIALS */
+  .tst{background:var(--bg-2);border-top:1px solid var(--line-2)}
+  .tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+  .quote{border-top:2px solid var(--acc);padding:30px 0 0}
+  .quote p{font-size:19px;line-height:1.5;font-weight:500;margin:0 0 26px;color:#fff}
+  .who{display:flex;align-items:center;gap:14px}
+  .avatar{
+    width:46px;height:46px;border-radius:50%;flex:none;
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--head);font-weight:800;font-size:16px;letter-spacing:.02em;
+    background:linear-gradient(150deg, rgba(245,166,35,.22), rgba(245,166,35,.06));
+    color:var(--acc);border:1px solid rgba(245,166,35,.3);
+  }
+  .who .n{font-family:var(--head);font-weight:800;text-transform:uppercase;font-size:16px}
+  .who .r{font-size:13px;color:var(--muted-2)}
+
+  /* CTA */
+  .cta{background:var(--acc);color:var(--acc-ink);padding:min(11vw,130px) 6vw;overflow:hidden}
+  .cta-inner{max-width:1100px;margin:0 auto;text-align:center}
+  .cta .eb{font-family:var(--head);font-weight:800;font-size:15px;letter-spacing:.28em;text-transform:uppercase;opacity:.72;margin-bottom:20px}
+  .cta h2{font-family:var(--head);font-weight:900;text-transform:uppercase;font-size:clamp(48px,8vw,128px);line-height:.86;margin:0 0 28px;letter-spacing:-.01em}
+  .cta p{font-size:20px;line-height:1.55;max-width:600px;margin:0 auto 40px;font-weight:500;color:rgba(13,15,18,.8)}
+  .cta .fine{margin-top:22px;font-size:14px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;opacity:.62}
+
+  /* FOOTER */
+  footer.ft{padding:64px 6vw 48px;border-top:1px solid var(--line-2)}
+  .ft-top{max-width:var(--wrap);margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:40px}
+  .ft-top .logo{font-size:26px}
+  .ft-top p{max-width:330px;font-size:15px;line-height:1.6;color:var(--muted-2);margin-top:16px}
+  .ft-cols{display:flex;gap:64px;flex-wrap:wrap}
+  .ft-col{display:flex;flex-direction:column;gap:12px}
+  .ft-col .h{font-family:var(--head);font-weight:800;text-transform:uppercase;font-size:14px;letter-spacing:.18em;color:var(--muted-2)}
+  .ft-col a{color:var(--muted);font-size:15px}
+  .ft-col a:hover{color:#fff}
+  .ft-bottom{max-width:var(--wrap);margin:48px auto 0;padding-top:24px;border-top:1px solid var(--line-2);font-size:13px;letter-spacing:.05em;color:var(--muted-2)}
+
+  /* grain */
+  .grain{position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.045;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  /* ============ RESPONSIVE ============ */
+  @media(max-width:900px){
+    .about-grid{grid-template-columns:1fr;gap:40px}
+    .svc-grid,.tst-grid{grid-template-columns:1fr}
+    .stats-grid{grid-template-columns:1fr}
+    .stat{border-right:0;border-bottom:1px solid var(--line-2)}
+    .stat:last-child{border-bottom:0}
+    .res-grid{grid-template-columns:1fr}
+    nav.links{
+      position:fixed;inset:0 0 0 auto;width:min(80vw,320px);
+      background:rgba(10,12,15,.97);backdrop-filter:blur(14px);
+      flex-direction:column;justify-content:center;align-items:flex-start;
+      gap:28px;padding:40px;font-size:22px;
+      transform:translateX(100%);transition:transform .3s ease;
+      border-left:1px solid var(--line);
+    }
+    nav.links.open{transform:translateX(0)}
+    .burger{display:flex;z-index:110}
+    .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .burger.open span:nth-child(2){opacity:0}
+    .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  }
+  @media(max-width:560px){
+    .hero .trust{gap:14px 20px}
+    .res{padding:40px 28px}
+    .stat{padding:40px 6vw}
+  }
+
+  /* reduced motion */
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;scroll-behavior:auto!important}
+    .btn:hover,.card:hover{transform:none}
+    [data-aos]{opacity:1!important;transform:none!important}
+  }
+</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a href="#top" class="logo">MARCUS<span class="dot">.</span>SILVA</a>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="links" id="links">
+    <a class="txt" href="#about">About</a>
+    <a class="txt" href="#services">Services</a>
+    <a class="txt" href="#results">Results</a>
+    <a class="cta" href="#book">Book a call</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow" data-aos="fade-up">Business &amp; Career Coach · São Paulo</span>
+    <h1 data-aos="fade-up" data-aos-delay="60">
+      Take control<br>of your <span class="tw" id="tw">career</span><span class="caret" aria-hidden="true"></span>
+    </h1>
+    <p class="lede" data-aos="fade-up" data-aos-delay="120">
+      No fluff. No recycled corporate frameworks. I help ambitious professionals and founders make
+      the bold moves most people talk themselves out of, and get paid for it.
+    </p>
+    <div class="actions" data-aos="fade-up" data-aos-delay="180">
+      <a href="#book" class="btn btn-primary">Book a strategy call <span class="arw">→</span></a>
+      <a href="#results" class="btn btn-ghost">See client results</a>
+    </div>
+    <div class="trust" data-aos="fade-up" data-aos-delay="240">
+      <span><b>340+</b> clients coached</span>
+      <span><b>$12M+</b> revenue unlocked</span>
+      <span><b>15 yrs</b> in the trenches</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats" id="stats">
+  <div class="stats-grid">
+    <div class="stat">
+      <div class="num"><span class="count" data-target="340">0</span>+</div>
+      <div class="lbl">Clients coached</div>
+    </div>
+    <div class="stat">
+      <div class="num">$<span class="count" data-target="12">0</span>M+</div>
+      <div class="lbl">Revenue unlocked</div>
+    </div>
+    <div class="stat">
+      <div class="num"><span class="count" data-target="93">0</span>%</div>
+      <div class="lbl">Client satisfaction</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="pad" id="about">
+  <div class="wrap about-grid">
+    <div class="photo-frame" data-aos="fade-right">
+      <div class="ph" aria-hidden="true">MS</div>
+      <div class="badge">15 yrs in the trenches</div>
+      <div class="cap">Marcus Silva · São Paulo, Brazil</div>
+    </div>
+    <div class="about-copy" data-aos="fade-left">
+      <span class="eyebrow acc">I've been where you are</span>
+      <h2 class="title">This isn't theory.<br>It's the playbook I used.</h2>
+      <p>I spent a decade climbing, stalling, quitting and rebuilding. I scaled a company to a real
+        exit and coached leaders across Latin America and beyond. I know exactly how it feels to be
+        capable, ambitious, and still stuck.</p>
+      <p>My job is to cut through the noise, tell you the truth other people won't, and hand you a
+        plan you'll actually execute. If you want a cheerleader, I'm the wrong guy.</p>
+      <div class="about-stats">
+        <div><div class="v">1:1</div><div class="k">Direct access</div></div>
+        <div><div class="v">Global</div><div class="k">Clients worldwide</div></div>
+        <div><div class="v">Exit</div><div class="k">Founder himself</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="pad services" id="services">
+  <div class="wrap">
+    <div class="svc-head" data-aos="fade-up">
+      <h2 class="title">How we<br>work together</h2>
+      <p>Three ways in. Every one is direct, high intensity, and built around a single outcome:
+        measurable momentum.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="card" data-aos="fade-up">
+        <div class="no">01</div>
+        <h3>Career Acceleration</h3>
+        <p>For professionals done waiting to be noticed. Land the promotion, negotiate the raise, or
+          make the pivot with a strategy, not a hope.</p>
+        <div class="tags">Promotions · Raises · Pivots</div>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="80">
+        <div class="no">02</div>
+        <h3>Founder Coaching</h3>
+        <p>For founders scaling under pressure. We fix what's actually holding growth back: offer,
+          focus, team, and the story you tell yourself.</p>
+        <div class="tags">Growth · Fundraising · Focus</div>
+      </div>
+      <div class="card flag" data-aos="fade-up" data-aos-delay="160">
+        <div class="no">03 · Flagship</div>
+        <h3>The Intensive</h3>
+        <p>90 days, 1:1, no hiding. A full contact sprint to rebuild your positioning, income and
+          execution from the ground up.</p>
+        <div class="tags">By application only</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESULTS ============ -->
+<section class="pad" id="results">
+  <div class="wrap">
+    <div class="results-head" data-aos="fade-up">
+      <span class="eyebrow acc center">Receipts, not promises</span>
+      <h2 class="title">The results speak louder</h2>
+    </div>
+    <div class="res-grid">
+      <div class="res" data-aos="fade-up">
+        <div class="big">+140%</div>
+        <div class="h">Salary in 9 months</div>
+        <p>Senior PM stuck at the same band for 3 years. One repositioning play and a hard
+          negotiation later, nearly doubled.</p>
+      </div>
+      <div class="res" data-aos="fade-up" data-aos-delay="80">
+        <div class="big">$2.4M</div>
+        <div class="h">ARR from zero, in 18 months</div>
+        <p>Solo founder with a good product and no go to market. We rebuilt the offer and the sales
+          motion from scratch.</p>
+      </div>
+      <div class="res" data-aos="fade-up">
+        <div class="big">3×</div>
+        <div class="h">Promotions in 2 years</div>
+        <p>From individual contributor to Director. Same person, same skills, a completely different
+          strategy for being seen.</p>
+      </div>
+      <div class="res" data-aos="fade-up" data-aos-delay="80">
+        <div class="big">7-fig</div>
+        <div class="h">Exit at 34</div>
+        <p>Bootstrapped founder who almost sold too early. We held the line, sharpened the numbers,
+          and closed on her terms.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="pad tst">
+  <div class="wrap">
+    <span class="eyebrow acc" data-aos="fade-up">In their words</span>
+    <div class="tst-grid">
+      <div class="quote" data-aos="fade-up">
+        <p>"Marcus said the things my mentors were too polite to. Uncomfortable, correct, and worth
+          every cent."</p>
+        <div class="who">
+          <div class="avatar" aria-hidden="true">AR</div>
+          <div><div class="n">Ana R.</div><div class="r">VP Product, fintech</div></div>
+        </div>
+      </div>
+      <div class="quote" data-aos="fade-up" data-aos-delay="80">
+        <p>"I came in wanting tactics. I left with a completely different relationship to risk. My
+          business tripled."</p>
+        <div class="who">
+          <div class="avatar" aria-hidden="true">RM</div>
+          <div><div class="n">Rafael M.</div><div class="r">Founder, agency</div></div>
+        </div>
+      </div>
+      <div class="quote" data-aos="fade-up" data-aos-delay="160">
+        <p>"No slides, no fluff, no BS. Just a plan and someone who refused to let me shrink. Rare."</p>
+        <div class="who">
+          <div class="avatar" aria-hidden="true">CT</div>
+          <div><div class="n">Camila T.</div><div class="r">Director, SaaS</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta" id="book">
+  <div class="cta-inner" data-aos="zoom-in">
+    <div class="eb">Limited 1:1 spots</div>
+    <h2>Stop planning.<br>Start moving.</h2>
+    <p>Book a no-nonsense strategy call. We'll pressure-test where you're stuck and whether working
+      together makes sense. If it doesn't, I'll tell you.</p>
+    <a href="mailto:hello@marcussilva.co?subject=Strategy%20call" class="btn btn-dark">Book your strategy call <span class="arw">→</span></a>
+    <div class="fine">Free · 30 minutes · No pitch</div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="ft">
+  <div class="ft-top">
+    <div>
+      <a href="#top" class="logo">MARCUS<span class="dot">.</span>SILVA</a>
+      <p>Business &amp; Career Coach. Helping ambitious people make bold moves, from São Paulo, for
+        clients everywhere.</p>
+    </div>
+    <div class="ft-cols">
+      <div class="ft-col">
+        <div class="h">Explore</div>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#results">Results</a>
+      </div>
+      <div class="ft-col">
+        <div class="h">Connect</div>
+        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:hello@marcussilva.co">hello@marcussilva.co</a>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom">© 2026 Marcus Silva · São Paulo, Brazil</div>
+</footer>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  // ---- AOS scroll reveal ----
+  AOS.init({ duration: 750, once: true, offset: 90, easing: 'ease-out-cubic' });
+
+  // ---- Sticky nav background on scroll ----
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // ---- Mobile menu ----
+  const burger = document.getElementById('burger');
+  const links = document.getElementById('links');
+  burger.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open'); burger.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+  }));
+
+  // ---- Typewriter ----
+  const words = ['career', 'business', 'income', 'future'];
+  const tw = document.getElementById('tw');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce) {
+    let wi = 0, ci = words[0].length, deleting = true;
+    const tick = () => {
+      const word = words[wi];
+      if (!deleting) {
+        ci++; tw.textContent = word.slice(0, ci);
+        if (ci === word.length) { deleting = true; return setTimeout(tick, 1600); }
+        setTimeout(tick, 95);
+      } else {
+        ci--; tw.textContent = word.slice(0, ci);
+        if (ci === 0) { deleting = false; wi = (wi + 1) % words.length; return setTimeout(tick, 260); }
+        setTimeout(tick, 48);
+      }
+    };
+    setTimeout(tick, 1600);
+  }
+
+  // ---- Animated counters (trigger on scroll) ----
+  const counters = document.querySelectorAll('.count');
+  const animate = (el) => {
+    const target = +el.dataset.target;
+    const dur = 1700, start = performance.now();
+    const step = (now) => {
+      const p = Math.min(1, (now - start) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased);
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { animate(e.target); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.6 });
+  counters.forEach(c => reduce ? (c.textContent = c.dataset.target) : io.observe(c));
+</script>
+</body>
+</html>
